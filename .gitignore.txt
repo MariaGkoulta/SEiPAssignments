@@ -1,7 +1,0 @@
-# IDE-specific files and directories
-.project
-.settings/
-.classpath
-
-# Maven output files and directories
-target/
