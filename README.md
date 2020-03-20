@@ -26,4 +26,4 @@ The produced jar is located in the target directory and can be executed from the
 java -jar gradeshistogram/target/gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar <text_file>
 ```
 where ``` <text_file>``` is the file with the grades from which the histogram will be extracted. 
-The input file should have the format of the file ```<grades.txt>``` which is located in the following directory:(```gradeshistogram\src\main\resources```)
+The input file should have the format of the file ```<grades.txt>``` which is located in directory ```gradeshistogram\src\main\resources```
