@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.*;
 
 public class HistogramGenerator {
 
@@ -85,9 +86,10 @@ public class HistogramGenerator {
 			}
 			sfile.close();
 			//turns arraylist of integers into array of integers
-			int[] datavalues = new int[listOfNumbers.size()];
-			for (int i = 0; i < listOfNumbers.size(); i++) datavalues[listOfNumbers.get(i)] = datavalues[listOfNumbers.get(i)] + 1;
-
+			int[] datavalues = new int[Collections.max(listOfNumbers) + 1];
+			for (int i = 0; i < listOfNumbers.size(); i++) {
+				datavalues[listOfNumbers.get(i)] = datavalues[listOfNumbers.get(i)] + 1;
+			}
 
 			HistogramGenerator histogramGenerator = new HistogramGenerator();
 			histogramGenerator.generateChart(datavalues);
