@@ -9,8 +9,8 @@
 	</parent>
 	<artifactId>gradeshistogram</artifactId>
 
-	<name>module1</name>
-	<description>module of assignment</description>
+	<name>histogram-generator</name>
+	<description>This module creates a histogram of the frequency that a number appears in a file </description>
 
 	<dependencies>
     <!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
