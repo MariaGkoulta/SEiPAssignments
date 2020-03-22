@@ -14,6 +14,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.*;
 
+/**
+Represents a histogram generator. Receiving a file with numbers (e.g grades) a chart with the frequency
+with which each number appears is generated
+@author Maria Gkoulta
+@author marygkoulta@gmail.com
+*/
 public class HistogramGenerator {
 
 	/***
