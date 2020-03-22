@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HistogramGenerator {
-	
+
 	/***
 	 * Receives a single dimension Integer array. From this array the dataset
 	 * that will be used for the visualization is generated. Finally, The chart
 	 * is generated with the use of the aforementioned dataset and then
 	 * presented in the screen.
-	 * 
+	 *
 	 * @param dataValues Single dimension integer array
 	 */
 	public void generateChart(int[] dataValues) {
@@ -51,14 +51,14 @@ public class HistogramGenerator {
 		boolean urls = false; // do not visualize urls
 
 		// Declare and initialize a createXYLineChart JFreeChart
-		JFreeChart chart = ChartFactory.createXYLineChart("Chart title", "x_axis title", "y_axis_title", dataset,
+		JFreeChart chart = ChartFactory.createXYLineChart("Grades Histogram", "Grade", "Frequency", dataset,
 				PlotOrientation.VERTICAL, legend, tooltips, urls);
 
 		/*
 		 * Initialize a frame for visualizing the chart and attach the
 		 * previously created chart.
 		 */
-		ChartFrame frame = new ChartFrame("First", chart);
+		ChartFrame frame = new ChartFrame("Frequency Chart", chart);
 		frame.pack();
 		// makes the previously created frame visible
 		frame.setVisible(true);
@@ -73,7 +73,7 @@ public class HistogramGenerator {
 			System.err.println("No file given. Please try again!");
 			System.exit(1);
 		}
-		
+
 		Scanner sfile = null;
 		try {
 			sfile = new Scanner(inFile);
@@ -86,8 +86,9 @@ public class HistogramGenerator {
 			sfile.close();
 			//turns arraylist of integers into array of integers
 			int[] datavalues = new int[listOfNumbers.size()];
-			for (int i = 0; i < listOfNumbers.size(); i++) datavalues[i] = listOfNumbers.get(i);
-			
+			for (int i = 0; i < listOfNumbers.size(); i++) datavalues[listOfNumbers.get(i)] = datavalues[listOfNumbers.get(i)] + 1;
+
+
 			HistogramGenerator histogramGenerator = new HistogramGenerator();
 			histogramGenerator.generateChart(datavalues);
 		} catch (FileNotFoundException e) {
