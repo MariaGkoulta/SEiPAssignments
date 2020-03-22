@@ -7,7 +7,7 @@
   	<version>0.0.1-SNAPSHOT</version>
   	<packaging>pom</packaging>
   	
-  	<name>assignment2</name>
+  	<name>Grades Histogram Generator</name>
   	<description> Assignment to get familiar with a Java library and use Maven to package my application and the library into one standalone executable</description>
 
 	<properties>
