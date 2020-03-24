@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  	<groupId>gr.aueb.dmst.MariaGkoulta</groupId>
+  	<artifactId>seip2020_practical_assignments</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<packaging>pom</packaging>
+  	
+  	<name>Grades Histogram Generator</name>
+  	<description> Assignment to get familiar with a Java library and use Maven to package my application and the library into one standalone executable</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+ 
+ 	<modules>
+  		<module>gradeshistogram</module>
+  	</modules>
+</project>
