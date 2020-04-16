@@ -36,4 +36,11 @@ public class FileIOTest {
 		thrown.expectMessage("Given file is empty");
 		fileio.readFile(emptyFilepath);
 	}
+
+	@Test
+	public void testReadFileContainsInvalidEntries() {
+		int[] expectedNumbers = new int[] {10, 12, 13, 17, 11};
+		String misformatedFilepath = resourcesPath.concat("random");
+		Assert.assertArrayEquals(expectedNumbers, fileio.readFile(misformatedFilepath));
+	}
 }
