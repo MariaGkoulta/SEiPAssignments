@@ -26,4 +26,26 @@ public class MyMath {
 	        return fact;
 		}
 	}
+
+	/**
+	 * Checks if a number is prime
+	 * @param number which is checked
+	 * @return true if number is prime, else false
+	 * @exception IllegalArgumentException when the number
+	 * is less than two
+	 */
+	public boolean isPrime(int number) {
+		if (number < 2) {
+			throw new IllegalArgumentException("The number cannot be less than two");
+		} else {
+			for (int i = 2; i < number; i++)
+			{
+				if (number % i == 0) {
+					return false;
+				}
+			}
+			return true;
+		}
+	}
+
 }
