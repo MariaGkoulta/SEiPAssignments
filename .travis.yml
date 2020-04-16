@@ -6,7 +6,7 @@ jdk:
 branches:
   only:
   - master
-  - development-2
+  - development
 
 script: 
   - mvn clean package jacoco:report
