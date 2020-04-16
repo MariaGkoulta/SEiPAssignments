@@ -1,0 +1,15 @@
+language: java
+
+jdk:
+  - openjdk8
+
+branches:
+  only:
+  - master
+  - development
+
+script: 
+  - mvn clean package jacoco:report coveralls:report cobertura:cobertura 
+
+after_success:
+- echo "Hello there!"
