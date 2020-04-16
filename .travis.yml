@@ -9,7 +9,7 @@ branches:
   - development-2
 
 script: 
-  - mvn clean package jacoco:report coveralls:report cobertura:cobertura 
+  - mvn clean package jacoco:report
 
 after_success:
 - echo "Hello there!"
