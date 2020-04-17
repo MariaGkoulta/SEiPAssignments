@@ -9,7 +9,7 @@ The specific project consists of test cases for classes that contain some method
 
 ### Prerequisites
 - Java JDK [version 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (or later)
-- [Maven 3.3] (https://maven.apache.org/)
+- Maven [3.3](https://maven.apache.org/)
 (Instructions on how to install Maven can be found [here](https://maven.apache.org/))
 
 ### Installing
