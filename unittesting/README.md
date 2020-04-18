@@ -1,5 +1,5 @@
 # SEiPAssignments: Assignment 3
-[![Build Status](https://travis-ci.com/MariaGkoulta/SEiPAssignments.svg?token=KpHRL7BnsX1xF4zhpsMT&branch=development)](https://travis-ci.com/MariaGkoulta/SEiPAssignments)
+[![Build Status](https://travis-ci.com/MariaGkoulta/SEiPAssignments.svg?token=KpHRL7BnsX1xF4zhpsMT&branch=master)](https://travis-ci.com/MariaGkoulta/SEiPAssignments)
 
 ## Overview
 This is the third lab assignment of the course Software Engineering in Practice.
