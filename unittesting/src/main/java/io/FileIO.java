@@ -39,11 +39,9 @@ public class FileIO {
 			String line = null;
 			while ((line = reader.readLine()) != null) {
 				try {
-				int number = Integer.parseInt(line);
-				numbersList.add(number);
-				} catch (Exception e) {
-
-				}
+				  int number = Integer.parseInt(line);
+				  numbersList.add(number);
+				} catch (NumberFormatException ignore) {}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
