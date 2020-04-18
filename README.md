@@ -10,7 +10,7 @@ The first assignment aimed at familiarizing us with GitHub and can be found [her
 
 ### Second Assignment
 The second assignment was about using [Maven](https://maven.apache.org/) to build an application and getting familiar with a Java library
-It can be found in the ```gradeshistogram``` folder of this repository.
+It can be found in the [gradeshistogram](gradeshistogram) folder of this repository.
 
 ### Third Assignment
-The third assignment concerns unittesting and continuous integration and can be found in the ```unittesting``` folder of this repository.
+The third assignment concerns unittesting and continuous integration and can be found in the [unittesting](unittesting) folder of this repository.
