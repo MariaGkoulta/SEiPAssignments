@@ -54,6 +54,13 @@ public class ArithmeticOperationsTest {
 	public void testMutiplication() {
 		Assert.assertEquals(20, obj.multiply(4, 5));
 	}
+	
+	@Test
+	public void testZeroMultiplication() {
+		Assert.assertEquals(0, obj.multiply(0, 3));
+		Assert.assertEquals(0, obj.multiply(0, 0));
+		Assert.assertEquals(0, obj.multiply(4, 0));
+	}
 
 }
 
