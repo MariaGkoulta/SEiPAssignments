@@ -1,5 +1,5 @@
 # SEiPAssignments
-[![Build Status](https://travis-ci.com/MariaGkoulta/SEiPAssignments.svg?token=KpHRL7BnsX1xF4zhpsMT&branch=development)](https://travis-ci.com/MariaGkoulta/SEiPAssignments)
+[![Build Status](https://travis-ci.com/MariaGkoulta/SEiPAssignments.svg?token=KpHRL7BnsX1xF4zhpsMT&branch=master)](https://travis-ci.com/MariaGkoulta/SEiPAssignments)
 
 ## Overview
 This is a repository for the Lab Assigments of the course [Software Engineering in Practice](https://www.dept.aueb.gr/en/dmst/content/software-engineering-practice)
