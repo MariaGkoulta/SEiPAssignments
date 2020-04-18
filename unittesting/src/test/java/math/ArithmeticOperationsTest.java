@@ -14,6 +14,11 @@ public class ArithmeticOperationsTest {
 		Assert.assertEquals(5.0, obj.divide(20.0, 4.0), 0.00001);
 	}
 	
+	@Test
+	public void testZeroNumDivision() {
+		Assert.assertEquals(0, obj.divide(0, 5), 0.00001);
+	}
+	
 	@Test(expected=ArithmeticException.class)
 	public void testDevideByZero() {
 		obj.divide(2,0);
