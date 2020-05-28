@@ -14,3 +14,6 @@ It can be found in the [gradeshistogram](gradeshistogram) folder of this reposit
 
 ### Third Assignment
 The third assignment concerns unittesting and continuous integration and can be found in the [unittesting](unittesting) folder of this repository.
+
+### Fourth Assignment
+The fourth assignment concerns design patterns and can be found in the [sourcecodeanalyzer](sourcecodeanalyzer) folder of this repository.
