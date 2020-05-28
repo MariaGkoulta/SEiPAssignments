@@ -1,5 +1,6 @@
 package codeanalyzer;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,8 +13,8 @@ class RegexAnalyzer implements AnalyzerType {
 	
 	private String sourceCode;
 	
-	public RegexAnalyzer(String sourceCode) {
-		this.sourceCode = sourceCode;
+	public RegexAnalyzer(LocationReader locationReader) throws IOException {
+		this.sourceCode = locationReader.readIntoString();
 	}
 	
 	public int calculate(Metric metric) {
@@ -34,8 +35,8 @@ class StrcompAnalyzer implements AnalyzerType {
 	
 	private List<String> sourceCodeList;
 	
-	public StrcompAnalyzer(List<String> sourceCodeList) {
-		this.sourceCodeList = sourceCodeList;
+	public StrcompAnalyzer(LocationReader locationReader) throws IOException {
+		this.sourceCodeList = locationReader.readIntoList();
 	}
 	
 	public int calculate(Metric metric) {

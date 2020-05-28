@@ -23,7 +23,7 @@ public class LocationReaderFactoryTest {
 	@Test
 	public void testCreateWeb() throws IOException {
         final String locationType = "web";
-        final String TEST_CLASS_WEB ="https://docs.google.com/document/d/1PavKCzYiXKUy3qHOjeC6rVDY8gquR-fEC7P1kmLZSBo/edit";
+        final String TEST_CLASS_WEB ="https://drive.google.com/uc?export=download&id=1z51FZXqPyun4oeB7ERFlOgfcoDfLLLhg";
         LocationReader locationReader = LocationReaderFactory.createLocationReader(locationType, TEST_CLASS_WEB);
         assertThat(locationReader, instanceOf(WebFileReader.class));       
 	}
