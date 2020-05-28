@@ -8,11 +8,11 @@ import codeanalyzer.*;
 
 public class DemoClient {
 
-	public static void main(String[] args) throws IOException {
+public static void main(String[] args) throws IOException{		
 		String filepath = "src/main/resources/TestClass.java";
 		String sourceCodeAnalyzerType = "regex";
 		String sourceFileLocation = "local";
-		String outputFilePath = "output_metrics";
+		String outputFilePath = "refactored";
 		String outputFileType = "csv";
 		
 		if(args.length == 5) {
@@ -26,18 +26,7 @@ public class DemoClient {
 			System.exit(1);
 		}
 
-		SourceCodeAnalyzer analyzer = new SourceCodeAnalyzer(sourceFileLocation);
-		int loc = analyzer.calculateLOC(filepath, sourceCodeAnalyzerType);
-		int nom = analyzer.calculateNOM(filepath, sourceCodeAnalyzerType);
-		int noc = analyzer.calculateNOC(filepath, sourceCodeAnalyzerType);
-		
-		Map<String, Integer> metrics = new HashMap<>();
-		metrics.put("loc",loc);
-		metrics.put("nom",nom);
-		metrics.put("noc",noc);
-				
-		MetricsExporter exporter = new MetricsExporter();
-		exporter.writeFile(outputFileType, metrics, outputFilePath);
+	MetricsCalculator metricsCalculator = new MetricsCalculator(sourceFileLocation, filepath, sourceCodeAnalyzerType);
+	metricsCalculator.exportMetrics(outputFileType, outputFilePath);
 	}
-
 }
