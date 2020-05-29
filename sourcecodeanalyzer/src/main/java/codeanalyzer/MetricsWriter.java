@@ -5,7 +5,22 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
+/***
+* Represents a metrics writer
+* Currently only csv writers are supported
+* @author Maria Gkoulta
+* @author marygkoulta@gmail.com
+*/
 public interface MetricsWriter {
+	
+	/***
+	 * Receives a map with the metric name and its value as well as the 
+	 * path where this file is located and writes the metrics in the correct 
+	 * form 
+	 *
+	 * @param metrics a list of the metrics that have to be written to the file
+	 * @param the path of the file where the metrics have to be written
+	 */
 	public void writeFile(Map<String, Integer> metrics, String filepath);
 }
 

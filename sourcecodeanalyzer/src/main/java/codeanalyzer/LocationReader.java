@@ -9,11 +9,34 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+* Represents a reader for a specific location of a file
+* Currently, the types supported are a local file and a 
+* file in the web
+* @author Maria Gkoulta
+* @author marygkoulta@gmail.com
+*/
 public abstract class LocationReader {
 	
+	/***
+	* Converts a file with source code into a list of the 
+	* strings of each line of code
+	* @return the list of the strings
+	*/
 	public abstract List<String> readIntoList() throws IOException;
+	
+	/***
+	* Converts a file with source code into a string 
+	* @return the string with the source code
+	*/
 	public abstract String readIntoString() throws IOException;
 	
+	/***
+	* Receives a bufferedReader, iterates through its lines
+	* and returns a list with strings which represent each line
+	* @param the bufferedReader according to which the list is created 
+	* @return the list of strings of the source code
+	*/
 	public List<String> readBufferIntoList(BufferedReader bufferedReader) throws IOException {
 		List<String> lines = new ArrayList<>();
 		String line;
@@ -23,7 +46,13 @@ public abstract class LocationReader {
 		bufferedReader.close();
 		return lines;	
 	}
-	
+
+	/***
+	* Receives a bufferedReader, iterates through its lines
+	* and returns a string with each line being seperated with \n
+	* @param the bufferedReader according to which the string is created 
+	* @return the string of the source code
+	*/
 	public String readBufferIntoString(BufferedReader bufferedReader) throws IOException {
 		StringBuilder sb = new StringBuilder();
 		String line;

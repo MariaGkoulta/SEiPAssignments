@@ -1,10 +1,39 @@
 package codeanalyzer;
 
+
+/**
+* Represents a metric type, i.e loc, noc, nom
+* @author Maria Gkoulta
+* @author marygkoulta@gmail.com
+*/
 public interface Metric {
 	
+	/**
+	 * Returns the pattern which has to be matched for the
+	 * calculation of the specific metric
+	 * @return the pattern that has to be matched
+	*/
 	public String getPattern();
+	
+	/**
+	 * Evaluates whether a line is valid or invalid and has 
+	 * to be taken into account for the specific metric
+	 * @param line that has to be evaluated
+	 * @return true, if the line must be added or substracted
+	*/
 	public Boolean evaluateLine(String line);
 	public String getName();
+	
+	
+	/**
+	 * Evaluates whether the matches found have to be added to 
+	 * the source code or substracted from it. That depends on
+	 * whether the pattern defines what is counted as a metric or
+	 * what parts of the code are not included in this metric and
+	 * thus, have to be substracted from the total
+	 * @param line that has to be evaluated
+	 * @return the na
+	*/
 	public Boolean substractFromTotal();
 }
 

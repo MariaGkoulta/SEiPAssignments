@@ -5,7 +5,19 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/***
+* Represents an analyzer type, and currently there are
+* implementations for regular expressions, string comparison
+* @author Maria Gkoulta
+* @author marygkoulta@gmail.com
+*/
 public interface AnalyzerType {
+	
+	/***
+	* Receives a metric type and calculates it
+	* @param metric that has to be calculated
+	* @return the number of the specific metric 
+	*/
 	public int calculate(Metric metric);
 }
 
