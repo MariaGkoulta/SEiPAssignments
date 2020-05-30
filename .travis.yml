@@ -12,4 +12,4 @@ script:
   - mvn clean package jacoco:report
 
 after_success:
-- echo "Hello there!"
+- bash scripts/code_analyzer_script.sh
