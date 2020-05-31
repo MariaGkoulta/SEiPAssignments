@@ -14,8 +14,16 @@ import java.util.Map;
 */
 public class MetricsCalculator {
 	
-	public AnalyzerType analyzerType;
-	public List<Metric> metrics = new ArrayList<>();
+	private AnalyzerType analyzerType;
+	private List<Metric> metrics = new ArrayList<>();
+	
+	public AnalyzerType getAnalyzerType() {
+		return this.analyzerType;
+	}
+	
+	public void setAnalyzerType(AnalyzerType analyzerType) {
+		this.analyzerType = analyzerType;
+	}
 	
 	public MetricsCalculator(String sourceFileLocation, String filepath, String sourceCodeAnalyzerType) throws IOException {
 		AnalyzerTypeFactory analyzerTypeFactory = new AnalyzerTypeFactory(sourceFileLocation, filepath);

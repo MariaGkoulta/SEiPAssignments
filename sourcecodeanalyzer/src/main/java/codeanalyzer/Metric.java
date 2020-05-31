@@ -32,7 +32,7 @@ public interface Metric {
 	 * what parts of the code are not included in this metric and
 	 * thus, have to be substracted from the total
 	 * @param line that has to be evaluated
-	 * @return the na
+	 * @return true if the above condition is true, false otherwise
 	*/
 	public Boolean substractFromTotal();
 }

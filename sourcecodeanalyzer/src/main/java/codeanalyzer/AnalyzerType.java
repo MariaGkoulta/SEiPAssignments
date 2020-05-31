@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 /***
 * Represents an analyzer type, and currently there are
-* implementations for regular expressions, string comparison
+* implementations for regular expressions and string comparison
 * @author Maria Gkoulta
 * @author marygkoulta@gmail.com
 */

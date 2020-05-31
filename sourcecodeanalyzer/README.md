@@ -4,7 +4,7 @@
 
 ## Overview
 This is the fourth lab assignment of the course Software Engineering in Practice. Its goal is to get familiar with design principles by refactoring code and applying design patterns on a given code base.
-For this assignment we have to act as the maintainers of a software system that reads a Java source code file that is stored locally or on the web, calculates the LOC, NOM and NOC metrics and finally, exports these metrics to an output file
+For this assignment we have to act as the maintainers of a software system that reads a Java source code file that is stored locally or on the web, calculates the LOC, NOM and NOC metrics and finally, exports these metrics to an output file.
 The new module which is added for this purpose is called ```sourcecodeanalyzer```
 
 ## Getting Started
@@ -63,38 +63,38 @@ For example:
 ### Design Decisions
 #### LocationReader – LocationReaderFactory
 To implement the function of reading a file from a specific location and then insert it in a specific type of structure,
-the design principle of Factory on Strategy has been used. Specifically, an abstract class named LocationReader was created
-that contains the methods readBufferIntoList and readBufferIntoString which accept as parameter a buffered reader and return
-a list of strings or a string respectively. The abstract methods that have to be implemented by the sub-classes are the
-readIntoList and readIntoString methods. The classes that extend the LocationReader class are the WebFileReader and LocalFileReader.
+the design principle of **Factory on Strategy** has been used. Specifically, an abstract class named ```LocationReader``` was created
+that contains the methods ```readBufferIntoList``` and ```readBufferIntoString``` which accept as parameter a buffered reader and
+return a list of strings or a string respectively. The abstract methods that have to be implemented by the sub-classes are the ```readIntoList```
+and ```readIntoString``` methods. The classes that extend the ```LocationReader``` class are the ```WebFileReader``` and ```LocalFileReader```.
 Those classes have as a private field the buffered reader used by the above methods to read the file into a String or a List.
-Moreover, a class named LocationReaderFactory was created in order to produce the correct LocationReader according to the source
+Moreover, a class named ```LocationReaderFactory``` was created in order to produce the correct ```LocationReader``` according to the source
 file location type. Right now, the locations supported are a local file and a file in the web. By implementing the function as
-described above, it is easy to add a new location and create the respective buffer in order to call the methods readIntoString and
-readIntoList.
+described above, it is easy to add a new location and create the respective buffer in order to call
+the methods ```readIntoString``` and ```readIntoList```.
 #### Metric
 The interface Metric was created in order to make it easier to add new types of metrics in the system. Each metric has to implement
-the methods getPattern() (in order to obtain the pattern which has to be matched in order check how many cases were found which we
-have add or substract to get the number which corresponds to the metric), evaluateLine() (in order to check if a line has to be counted
-as valid or invalid for the specific metric), getName() (in order to obtain the name of the metric), and substractFromTotal() (which is
+the methods ```getPattern()``` (in order to obtain the pattern which has to be matched in order check how many cases were found which we
+have to add or substract to get the number which corresponds to the metric), ```evaluateLine()``` (in order to check if a line has to be counted
+as valid or invalid for the specific metric), ```getName()``` (in order to obtain the name of the metric), and ```substractFromTotal()``` (which is
 the method that defines if the above cases are the metric itself or if they are the invalid cases, and thus, have to be subtracted from
 the total code metric).
 #### AnalyzerType – AnalyzerTypeFactory
-This is one more case where the Factory on Strategy pattern was applied. The types of analyzers currently supported are the regular
+This is one more case where the **Factory on Strategy** pattern was applied. The types of analyzers currently supported are the regular
 expressions (RegexAnalyzer) and the string comparison (StrcompAnalyzer). The analyzer type is represented as an interface and the
-subclasses have to implement the method of calculate which receives as parameter a specific metric and calculates it according to
+subclasses have to implement the method of ```calculate()``` which receives as parameter a specific metric and calculates it according to
 the analyzer type since both classes override this method. My using the strategy pattern it is easier to add new analyzer types and
 define the method with which they calculate each metric.
 #### AnalyzerType – LocationReader
-However, in order to calculate the metric the analyzer type should have the correct form of source code. Therefore the Bridge Pattern
+However, in order to calculate the metric the analyzer type should have the correct form of source code. Therefore the **Bridge Pattern**
 is used in order to assign the correct source code according to the location reader. For example, if the analyzer is of type regex
-the source code has to be given as a string. This is achieved by calling the method readIntoString which is defined for every source location type.
+the source code has to be given as a string. This is achieved by calling the method ```readIntoString()``` which is defined for every source location type.
 #### MetricsWriter – MetricsWriterFactory
-The design principle of Factory on Strategy was used for this function as well. Every metrics writer has to implement the method writeFile
+The design principle of Factory on Strategy was used for this function as well. Every metrics writer has to implement the method ```writeFile()```
 and the factory class produces the correct writer according to the input given by the client. With this implementation it’s easy to add new
-types of metric writers by only implementing the writeFile method.
+types of metric writers by only implementing the ```writeFile()``` method.
 #### MetricsCalculator
-The MetricsCalculator class serves as a class which gathers all the types of metrics, defines the analyzerType needed, according to the client’s
+The ```MetricsCalculator``` class serves as a class which gathers all the types of metrics, defines the ```analyzerType``` needed, according to the client’s
 input, and finally, calculates and exports the metrics.
 
 ### Benefits
@@ -103,3 +103,10 @@ We have avoided some duplicate code of the previous version and most of the impl
 
 ### Class diagram
 The class diagram for the above system can be found [here](class_diagram.png).
+
+### Integration Test
+Concerning the integration test, a [script](../scripts/code_analyzer_script.sh) has been created
+which checks whether the output file produced matches the file with the correct results, which was manually created.
+This script is called in the ```after_success``` block of the ```.travis.yml``` file.
+In this way, we execute an end-to-end run of the module and verify that the produced metrics file is identical to a
+file that you have manually generated and contains the expected values.
